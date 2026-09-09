@@ -1,0 +1,27 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="d1" name="Component Diagram">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Component Diagram: Feature Flag &amp;amp; Dynamic Config Manager" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#1F3B70;" vertex="1" parent="1"><mxGeometry x="300" y="10" width="900" height="30" as="geometry" /></mxCell>
+        <mxCell id="sub" value="Event-Driven Microservices Architecture" style="text;html=1;align=center;fontSize=12;fontStyle=2;" vertex="1" parent="1"><mxGeometry x="300" y="40" width="900" height="20" as="geometry" /></mxCell>
+        <mxCell id="admin" value="&lt;b&gt;Admin Console&lt;/b&gt;&lt;br&gt;(Release Manager UI)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#1F3B70;fontSize=12;" vertex="1" parent="1"><mxGeometry x="60" y="120" width="220" height="70" as="geometry" /></mxCell>
+        <mxCell id="api" value="&lt;b&gt;Config Management API&lt;/b&gt;&lt;br&gt;(Flag &amp;amp; Cohort CRUD Service)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#1F3B70;fontSize=12;" vertex="1" parent="1"><mxGeometry x="500" y="120" width="260" height="70" as="geometry" /></mxCell>
+        <mxCell id="store" value="&lt;b&gt;Config Store&lt;/b&gt;&lt;br&gt;(Persistent Database)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#FCF1E3;strokeColor=#C0651C;fontSize=12;" vertex="1" parent="1"><mxGeometry x="960" y="120" width="240" height="70" as="geometry" /></mxCell>
+        <mxCell id="rule" value="&lt;b&gt;Rule Evaluation Engine&lt;/b&gt;&lt;br&gt;(Hashing &amp;amp; Cohort Targeting Logic)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#1F3B70;fontSize=12;" vertex="1" parent="1"><mxGeometry x="500" y="330" width="260" height="70" as="geometry" /></mxCell>
+        <mxCell id="sync" value="&lt;b&gt;Real-Time Sync Service&lt;/b&gt;&lt;br&gt;(Pub/Sub Broker · WebSocket Push)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#EAF0FA;strokeColor=#1F3B70;fontSize=12;" vertex="1" parent="1"><mxGeometry x="500" y="540" width="260" height="70" as="geometry" /></mxCell>
+        <mxCell id="sdk" value="&lt;b&gt;Client SDK&lt;/b&gt;&lt;br&gt;(Embedded in Consuming App)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#E8F4E8;strokeColor=#2E7D32;fontSize=12;" vertex="1" parent="1"><mxGeometry x="60" y="540" width="240" height="70" as="geometry" /></mxCell>
+        <mxCell id="audit" value="&lt;b&gt;Audit &amp;amp; Analytics Logger&lt;/b&gt;&lt;br&gt;(Change History &amp;amp; Usage Metrics)" style="shape=component;align=center;spacingLeft=20;whiteSpace=wrap;html=1;fillColor=#FCF1E3;strokeColor=#C0651C;fontSize=12;" vertex="1" parent="1"><mxGeometry x="960" y="540" width="240" height="70" as="geometry" /></mxCell>
+        <mxCell id="e1" value="IConfigManagement" style="html=1;endArrow=oval;endFill=0;endSize=12;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="admin" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="IConfigPersistence" style="html=1;endArrow=oval;endFill=0;endSize=12;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="api" target="store"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="IRuleEvaluation" style="html=1;endArrow=oval;endFill=0;endSize=12;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="api" target="rule"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="uses IConfigPersistence" style="html=1;endArrow=none;dashed=1;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="rule" target="store"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="IRuleEvaluation (streamed)" style="html=1;endArrow=oval;endFill=0;endSize=12;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="sync" target="rule"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="IFlagSync" style="html=1;endArrow=oval;endFill=0;endSize=12;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="sdk" target="sync"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="IAuditLog" style="html=1;endArrow=oval;endFill=0;endSize=12;curved=1;fontStyle=1;fontColor=#1F3B70;" edge="1" parent="1" source="audit" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Legend&lt;/b&gt;&lt;br&gt;Box with tabs: UML component&lt;br&gt;Lollipop (o): provided interface&lt;br&gt;Socket: required interface&lt;br&gt;Blue: application / service tier; orange: data / persistence tier; green: client-side tier&lt;br&gt;Solid line: direct dependency; dashed line: indirect / event-based dependency" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=10;fillColor=#F8F8F8;strokeColor=#CCCCCC;fontSize=11;" vertex="1" parent="1"><mxGeometry x="60" y="700" width="1140" height="130" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
