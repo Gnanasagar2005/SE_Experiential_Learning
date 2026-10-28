@@ -16,6 +16,7 @@ synchronization. The labs build on this same system.
 | [Lab 2](Lab-2/) | Agile Backlog Creation & Sprint Simulation in Jira | Epics and user stories, sprint board and burndown screenshots, sprint reflection |
 | [Lab 3](Lab-3/) | Component Modelling & Architectural Pattern Selection | UML component diagram, written architectural justification |
 | [Lab 4](Lab-4/) | Vibe Coding | Fixed and extended reaction time tester, before/after videos, chat history |
+| [Lab 5](Lab-5/) | Static Code Analysis | Cleaned hotel booking script, Pylint, Bandit and Flake8 reports before and after, issue table, reflection |
 
 Further labs will be added here as the course progresses.
 
