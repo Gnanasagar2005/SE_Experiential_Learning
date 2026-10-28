@@ -3,7 +3,6 @@
 import hashlib
 import os
 import secrets
-import math
 
 room_inventory = {
     "101": {"type": "Deluxe", "price": 150.0, "is_booked": False},
@@ -74,4 +73,5 @@ def main():
     print("Secret key active:", hotel_secret_key is not None)
 
 
-main()
+if __name__ == "__main__":
+    main()
