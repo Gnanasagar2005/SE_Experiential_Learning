@@ -18,6 +18,7 @@ synchronization. The labs build on this same system.
 | [Lab 4](Lab-4/) | Vibe Coding | Fixed and extended reaction time tester, before/after videos, chat history |
 | [Lab 5](Lab-5/) | Static Code Analysis | Cleaned hotel booking script, Pylint, Bandit and Flake8 reports before and after, issue table, reflection |
 | [Lab 6](Lab-6/) | Code and Branch Coverage | Line and branch coverage tests for the warranty claims module, coverage screenshots |
+| [Lab 7](Lab-7/) | Fuzz Testing | Hypothesis tests for the warranty claims module, fixed script, report with screenshots |
 
 Further labs will be added here as the course progresses.
 
